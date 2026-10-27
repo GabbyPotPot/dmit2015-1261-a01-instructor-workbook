@@ -39,7 +39,7 @@
                         var map = L.map('map#{currentItem.id}').setView([#{currentItem.latitude}, #{currentItem.longitude}], 13);
 
                         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                        maxZoom: 13,
+                        maxZoom: 19,
                         attribution: '&#169; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                         }).addTo(map);
 

@@ -1,0 +1,6 @@
+#FileLock
+#Tue Oct 27 16:19:40 MDT 2026
+hostName=dmit2015-ubuntu
+id=1a17f729db41e77abc56e183b1b2dc4ad458dfa723a
+method=file
+server=127.0.1.1\:35605
