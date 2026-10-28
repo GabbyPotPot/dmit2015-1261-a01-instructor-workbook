@@ -79,7 +79,14 @@ public class MovieService {
     }
 
     public Optional<Movie> findMovieById(Long movieId) {
-        return movieRepository.findOptionalById(movieId);
+        Optional<Movie> maybeMovie = movieRepository.findOptionalById(movieId);
+        if (maybeMovie.isPresent()) {
+            Movie existingMovie = maybeMovie.orElseThrow();
+            if (!existingMovie.getUsername().equalsIgnoreCase(getCallerUsername())) {
+                throw new RuntimeException("Access denied. You are not allowed to edit another user's data");
+            }
+        }
+        return maybeMovie;
     }
 
     public List<Movie> getAllMovies() {
